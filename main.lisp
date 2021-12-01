@@ -100,7 +100,7 @@
 
 ;;; This function prints
 (defun print-bench (details result)
-  (format *standard-output* "~A runs in: ~Fs" details (float result)))
+  (format t "~A runs in: ~Fs" details (float result)))
 
 (defun bench (&optional day func-name &rest args)
   (if (null day) nil (setf loaded-day (read-from-string (format nil "day~A" day))))
@@ -129,7 +129,7 @@
 ;;; This function runs file given amount of times and averages the real times
 (defun bench-fraction (func-name &rest args)
   (let ((t1 (get-internal-real-time)))
-    (funcall func-name args)
+    (apply func-name args)
     (let ((t2 (get-internal-real-time)))
       (/ (- t2 t1) internal-time-units-per-second))))
 (setf sb-ext:*muffled-warnings* nil)
