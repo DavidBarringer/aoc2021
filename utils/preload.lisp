@@ -1,3 +1,5 @@
 (ql:quickload 'uiop :silent t)
 (ql:quickload 'cl-ppcre :silent t)
 (use-package 'cl-ppcre)
+(ql:quickload :gtwiwtg :silent t)
+(use-package :gtwiwtg)

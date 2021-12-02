@@ -1,6 +1,6 @@
 ;; Put the given solutions for the examples here
-(setf test-sol-a 7)
-(setf test-sol-b 5)
+(setq test-sol-a 7)
+(setq test-sol-b 5)
 
 ;; Turns lines into list, then converts to numbers, simple
 (defun parse-input (input-file)
