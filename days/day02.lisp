@@ -13,6 +13,7 @@
 
 (defun part-b (parsed-input)
 	(let ((forward 0) (depth 0) (up 0) (down 0))
-		(loop for x in parsed-input do (set (CAR x) (+ (eval (CAR x)) (CDR x)))
-																	 (if (eq (CAR x) 'forward) (setf depth (+ depth (* (CDR x) (- down up))))))
+		(loop for x in parsed-input do
+			(set (CAR x) (+ (eval (CAR x)) (CDR x)))
+			(if (eq (CAR x) 'forward) (setf depth (+ depth (* (CDR x) (- down up))))))
 		(* forward depth)))
