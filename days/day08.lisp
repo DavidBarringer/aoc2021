@@ -22,7 +22,7 @@
 		      (mapcar (lambda (s2) (sort (concatenate 'list s2) 'CHAR<)) (remove "" (split " " s1) :test 'string=)))
 		    (split #\| s)))
 	  (get-file-lines input-file)))
-			      
+
 ;; Returns the solution for part a
 (defun part-a (parsed-input)
   (loop for outputs in (mapcar 'CADR parsed-input)
@@ -31,8 +31,8 @@
 ;; Returns the solution for part b
 (defun part-b (parsed-input)
   (let ((7segs (loop for i in parsed-input
-	for digits = (sort (apply 'concatenate 'list i) '< :key 'length)
-					   collect (to-7seg digits))))
+		     for digits = (sort (apply 'concatenate 'list i) '< :key 'length)
+		     collect (to-7seg digits))))
     (loop for outputs in (mapcar 'CADR parsed-input)
 	  for seg in 7segs
 	  sum (parse-integer (format nil "~{~A~}" (loop for output in outputs collect (get-val output seg)))))))
