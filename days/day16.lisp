@@ -1,6 +1,6 @@
 ;; Put the given solutions for the examples here
-(setq test-sol-a 16)
-(defvar test-sol-b "No test solution")
+(setq test-sol-a 11)
+(setq test-sol-b 9)
 
 (defstruct packet
   version
